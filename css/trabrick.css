@@ -1,0 +1,244 @@
+body, ul, li, p {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    font-size: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: #2C3E50;
+    color: white;
+    padding: 10px 20px;
+    align-items: center;
+    grid-template-areas: 
+        "logo titulo nav pesquisa";
+}
+
+.logo {
+    grid-area: logo;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.menu {
+    grid-area: nav;
+}
+
+.menu ul {
+    display: flex;
+}
+
+.menu ul li {
+    margin: 0 10px;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.pesquisa {
+    grid-area: pesquisa;
+}
+
+.pesquisa input {
+    padding: 5px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar {
+    background-color: #34495E;
+    color: white;
+    width: 200px;
+    padding: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+        "painel . ."
+        "painel card1 card2"
+        "painel . ."
+        "painel comece .";
+    gap: 50px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+.card1, .card2, .comece, .painel {
+    background-color: #12182F;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.card1, .card2 {
+    height: 170px;
+}
+
+.card1 {
+    grid-area: card1;
+}
+
+.card2 {
+    grid-area: card2;
+}
+
+.painel {
+    grid-area: painel;
+    border-radius: 25px;
+}
+
+.comece {
+    grid-area: comece;
+    justify-self: center;
+}
+
+button {
+    background-color: #12182F;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1A5276;
+}
+
+.titulom {
+    grid-area: titulom;
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 20px;
+}
+
+footer {
+    background-color: #2C3E50;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.footer .contato, .footer .social {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer > .social ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer > .social ul li {
+    margin: 0 10px;
+}
+
+
+
+.footer .social ul li a img {
+    width: 30px;
+    height: 30px;
+    
+}
+
+body {
+    background-image: linear-gradient(to bottom, #202B42, #3D4961);
+    background-attachment: fixed;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .header {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "logo"
+            "titulo"
+            "nav"
+            "pesquisa";
+        text-align: center;
+    }
+
+    .menu ul {
+        flex-direction: column;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "titulom"
+            "painel"
+            "card1"
+            "card2"
+            "comece";
+    }
+
+    .card1, .card2, .comece, .painel {
+        border-radius: 20px;
+    }
+
+    .titulom {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 10px;
+    }
+
+    .cards {
+        gap: 20px;
+    }
+
+    .titulom {
+        font-size: 1.2rem;
+        margin-top: 10px;
+    }
+}

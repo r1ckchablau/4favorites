@@ -1,0 +1,215 @@
+body, ul, li, p {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    font-size: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: #2C3E50;
+    color: white;
+    padding: 10px 20px;
+    align-items: center;
+    grid-template-areas: 
+        "logo titulo nav pesquisa";
+}
+
+.logo {
+    grid-area: logo;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.menu {
+    grid-area: nav;
+}
+
+.menu ul {
+    display: flex;
+}
+
+.menu ul li {
+    margin: 0 10px;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.pesquisa {
+    grid-area: pesquisa;
+}
+
+.pesquisa input {
+    padding: 5px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: 
+        "painel filmes";
+    gap: 50px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+.painel {
+    grid-area: painel;
+    background-color: #12182F;
+    border-radius: 25px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.painel ul {
+    list-style: none;
+    padding: 0;
+}
+
+.painel ul li {
+    margin-bottom: 10px;
+}
+
+.painel ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.filmes-container {
+    grid-area: filmes;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background-color: #202B42;
+    border-radius: 25px;
+}
+
+.filmes-container h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+
+.filmes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.filme-card {
+    display: flex;
+    align-items: flex-start;
+    border-radius: 20px;
+    padding: 20px;
+    color: white;
+    gap: 10px;
+    height: 250px; /* Ajuste a altura conforme necessário */
+}
+
+.filme-card img {
+    width: 100px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.filme-info p {
+    margin: 5px 0;
+}
+
+footer {
+    background-color: #2C3E50;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.footer .contato, .footer .social {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer .social ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer .social ul li {
+    margin: 0 10px;
+}
+
+.footer .social ul li a img {
+    width: 30px;
+    height: 30px;
+}
+
+body {
+    background-image: linear-gradient(to bottom, #202B42, #3D4961);
+    background-attachment: fixed;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .header {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "logo"
+            "titulo"
+            "nav"
+            "pesquisa";
+        text-align: center;
+    }
+
+    .menu ul {
+        flex-direction: column;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "painel"
+            "filmes";
+    }
+
+    .filmes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filme-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
